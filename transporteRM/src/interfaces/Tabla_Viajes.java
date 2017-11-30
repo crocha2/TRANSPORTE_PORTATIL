@@ -87,9 +87,9 @@ public final class Tabla_Viajes extends javax.swing.JFrame {
     public void listarViajes() {
         viaje = dbviaje.ListViajes();
         DefaultTableModel tb = (DefaultTableModel) tbViajes.getModel();
-        viaje.forEach((ve) -> {
+        for (viajes ve : viaje) {
             tb.addRow(new Object[]{ve.getId_viaje(),ve.getPlaca(),ve.getFecha(),ve.getDia(),ve.getRecorrido(),ve.getKm(),ve.getM3(),ve.getUnidad(),ve.getValor_m3(),ve.getTotal(),ve.getId_vehiculo()});
-        });
+        }
     }
 
     public void LimpiarViajes() {

@@ -53,9 +53,9 @@ public final class Recorridos extends javax.swing.JFrame {
     public void listarRecorridos() {
         recorrido = dbRecorridos.ListarRecorridos();
         DefaultTableModel tb = (DefaultTableModel) tbRecorridos.getModel();
-        recorrido.forEach((re) -> {
+        for (recorridos re : recorrido) {
             tb.addRow(new Object[]{re.getId_recorrido(), re.getRecorrido(), re.getKm_recorridos()});
-        });
+        }
     }
 
     public void LimpiarRecorridos() {

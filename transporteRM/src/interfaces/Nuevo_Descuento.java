@@ -64,9 +64,9 @@ public final class Nuevo_Descuento extends javax.swing.JFrame {
     public void listarDescuentos() {
         descuento = dbDescuentos.ListDescuentos();
         DefaultTableModel tb = (DefaultTableModel) tbDescuentos.getModel();
-        descuento.forEach((des) -> {
-            tb.addRow(new Object[]{des.getId_descuento(),des.getPlaca(),des.getFecha(),des.getDescripcion(),des.getUnidad(),des.getPrecio(),des.getTotal(),des.getId_vehiculo()});
-        });
+        for (descuentos des : descuento) {
+            tb.addRow(new Object[]{des.getId_descuento(), des.getPlaca(), des.getFecha(), des.getDescripcion(), des.getUnidad(), des.getPrecio(), des.getTotal(), des.getId_vehiculo()});
+        }
     }
 
     public void LimpiarDescuentos() {

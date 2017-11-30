@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import metodos.propietariosMysql;
 import principales.propietarios;
+import principales.vehiculos;
 
 /**
  *
@@ -55,9 +56,9 @@ public class Tabla_Propietarios extends javax.swing.JFrame {
     public void listarPropietarios() {
         propietario = dbPropietario.ListPropietario();
         DefaultTableModel tb = (DefaultTableModel) tbPropietarios.getModel();
-        propietario.forEach((pro) -> {
+        for (propietarios pro : propietario) {
             tb.addRow(new Object[]{pro.getId_propietario(),pro.getIdentificacion(),pro.getNombre_propietario(),pro.getDepartamento(),pro.getMunicipio(),pro.getDireccion(),pro.getFecha_ingreso(),pro.getEmail(),pro.getTelefono(),pro.getEstado()});
-        });
+        }
     }
 
     public void LimpiarPropietarios() {

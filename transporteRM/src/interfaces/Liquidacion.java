@@ -173,9 +173,9 @@ public class Liquidacion extends javax.swing.JFrame {
 
         viaje = dbLiq.ListViajesFechas(placa, datoIni, datoFin);
         DefaultTableModel tb = (DefaultTableModel) tbViajesFecha.getModel();
-        viaje.forEach((vi) -> {
+        for (viajes vi : viaje) {
             tb.addRow(new Object[]{vi.getId_viaje(), vi.getFecha(), vi.getPlaca(), vi.getDia(), vi.getRecorrido(), vi.getUnidad(), vi.getValor_m3(), vi.getM3(), vi.getKm(), vi.getTotal(), vi.getId_vehiculo()});
-        });
+        }
     }
 
     public void LimpiarDescuentosFechas() {
@@ -203,9 +203,9 @@ public class Liquidacion extends javax.swing.JFrame {
 
         descu = dbLiq.ListDescuentosFechas(placa, datoIni, datoFin);
         DefaultTableModel tb = (DefaultTableModel) tbDescuentoss.getModel();
-        descu.forEach((des) -> {
+        for (descuentos des : descu) {
             tb.addRow(new Object[]{des.getId_descuento(), des.getPlaca(), des.getFecha(), des.getDescripcion(), des.getUnidad(), des.getPrecio(), des.getTotal(), des.getId_vehiculo()});
-        });
+        }
     }
 
     /*

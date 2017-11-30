@@ -65,9 +65,9 @@ public class Tabla_Clientes extends javax.swing.JFrame {
     public void listarClientes() {
         cliente = db.ListClientes();
         DefaultTableModel tb = (DefaultTableModel) tbClientes.getModel();
-        cliente.forEach((cli) -> {
+        for (clientes cli : cliente) {
             tb.addRow(new Object[]{cli.getId_cliente(), cli.getTipo_persona(), cli.getNit(), cli.getNombre(), cli.getDepartamento(), cli.getMunicipio(), cli.getDireccion(), cli.getContacto(), cli.getEmail_contacto(), cli.getTelefono_contacto()});
-        });
+        }
     }
 
     public void LimpiarClientes() {

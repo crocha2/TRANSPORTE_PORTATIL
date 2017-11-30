@@ -57,9 +57,9 @@ public class Tabla_Conductores extends javax.swing.JFrame {
     public void listarConductores() {
         conductor = db.ListConductores();
         DefaultTableModel tb = (DefaultTableModel) tbConductores.getModel();
-        conductor.forEach((con) -> {
+        for (conductores con : conductor) {
             tb.addRow(new Object[]{con.getId_conductor(), con.getCedula(), con.getNombre_conductor(), con.getDepartamento(), con.getMunicipio(), con.getDireccion(), con.getFecha_ingreso(), con.getEmail(), con.getTelefono(), con.getNumero_licencia(), con.getClase_categoria(), con.getEstado()});
-        });
+        }
     }
 
     public void LimpiarConductores() {

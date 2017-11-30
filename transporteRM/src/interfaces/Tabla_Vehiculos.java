@@ -83,9 +83,9 @@ public final class Tabla_Vehiculos extends javax.swing.JFrame {
     public void listarVehiculos() {
         vehiculo = dbvehiculo.ListVehiculos();
         DefaultTableModel tb = (DefaultTableModel) tbVehiculos.getModel();
-        vehiculo.forEach((ve) -> {
+        for (vehiculos ve : vehiculo) {
             tb.addRow(new Object[]{ve.getId_vehiculo(),ve.getPlaca(),ve.getAño_modelo(),ve.getFecha_ingreso(),ve.getClase(),ve.getMarca(),ve.getModelo(),ve.getColor(),ve.getMetros_cubicos(),ve.getPropio(),ve.getEstado(),ve.getId_conductor(),ve.getId_propietario()});
-        });
+        }
     }
 
     public void LimpiarVehiculos() {
